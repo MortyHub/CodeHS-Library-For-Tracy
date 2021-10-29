@@ -2,13 +2,18 @@ import random
 
 '''
 square(how many sides, radius, color)
+
 hex(how many sides, radius, color)
+
 shapedef(how many sides, radius, how much you want to turn left, color)
+
 star(color)
+
 multi(shape, radius, shape, radius)
+
 spamcir(how many, radius, color, filled? ('true', 'false'))
 '''
-#square function
+# square function
 def square(x, y, z, a):
     color(z)
     if a == 'true':
@@ -49,9 +54,14 @@ def shapedef(x,y,z,s,a):
             forward(y)
             left(z)
 # star function
-def star(s):
+def star(s, a):
     color(s)
-    circle(40, 2500, 5)
+    if a == 'true':
+        begin_fill()
+        circle(40,2500,5)
+        end_fill()
+    else:
+        circle(40, 2500, 5)
     
 # multiple shapes in 1 function, this can be used as a quick way to get 2 shapes on screen
 def multi(x, y, z, f):
